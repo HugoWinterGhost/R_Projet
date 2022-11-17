@@ -5,7 +5,7 @@
 default.payment.next.month <- read.csv(
   "C:/UCI_Credit_Card.csv", 
   h = TRUE
-  )
+)
 
 default.payment.next.month[1:5, ]
 
@@ -17,9 +17,9 @@ summary(default.payment.next.month)
 
 ############################ Question 4 ############################
 
-sapply(default.payment.next.month, mean, na.rm=TRUE)
-sapply(default.payment.next.month, sd, na.rm=TRUE)
-sapply(default.payment.next.month, median, na.rm=TRUE)
+sapply(default.payment.next.month, mean, na.rm = TRUE)
+sapply(default.payment.next.month, sd, na.rm = TRUE)
+sapply(default.payment.next.month, median, na.rm = TRUE)
 
 ############################ Question 5 ############################
 
@@ -27,5 +27,7 @@ sapply(default.payment.next.month, median, na.rm=TRUE)
 library(funModeling)
 
 df_status(default.payment.next.month)
+
+# 0 : pas de crédit ou crédit payé avec pas de retards
 
 cat("\014")
