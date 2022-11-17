@@ -3,7 +3,7 @@
 ############################ Question 1 et 2 ############################
 
 default.payment.next.month <- read.csv(
-  "C:/UCI_Credit_Card.csv", 
+  "~/Documents/Cours/Machine Learning/R_Projet/UCI_Credit_Card.csv", 
   h = TRUE
 )
 
@@ -44,5 +44,9 @@ default.payment.next.month$EDUCATION
 default.payment.next.month$EDUCATION[
   default.payment.next.month$MARRIAGE == 0
 ]
+
+plot(default.payment.next.month$EDUCATION, 
+     default.payment.next.month$MARRIAGE
+)
 
 cat("\014")
