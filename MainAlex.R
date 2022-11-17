@@ -87,5 +87,30 @@ glm.fitl <- glm(
   data = train, family = binomial(link = logit)
 )
 
+glm.test.fitl <- glm(
+  DEFAULT_PAYMENT ~ . +
+    SEX + EDUCATION + MARRIAGE + AGE + PAY_5 + BILL_AMT1 + PAY_AMT1,
+  data = test, family = binomial(link = logit)
+)
+
 summary(glm.fitl)
+plot(glm.fitl, which = 1)
+train_auc <- predict(glm.fitl, type = "response")
+test_auc <- predict(glm.test.fitl, newdata = test, type = "response")
+
+gini_train <- 2 * auc(train$DEFAULT_PAYMENT, train_auc) - 1
+gini_train
+
+gini_test <- 2 * auc(test$DEFAULT_PAYMENT, test_auc) - 1
+gini_test
+
+# L'indice de Gini est un indice qui permet de mesurer la qualité d'un modèle de classification où tous les salaires, revenus sont supérieurs à 0. #nolint
+# On voit que les indices de Gini ont une valeur proche de 0.4, ce qui est un bon indice d'égalité entre notre modèles.
+
+# B
+
+# Un arbre de décision est un schéma représentant les résultats possibles d'une série de choix interconnectés et les probabilités associées à chaque résultat. #nolint
+# Les paramètres à varier pour améliorer la précision de l'arbre de décision sont le nombre de noeuds, la profondeur de l'arbre, le nombre de variables à prendre en compte pour la construction de l'arbre. #nolint
+
+# Une forêt aléatoire est un ensemble d'arbres de décision. Chaque arbre est construit à partir d'un échantillon aléatoire de données. #nolint
 cat("\014")
