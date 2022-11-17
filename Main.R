@@ -1,10 +1,11 @@
-credit_card <- read.csv(
-  "C:/Users/hfief/OneDrive/Documents/UCI_Credit_Card.csv", 
+default.payment.next.month <- read.csv(
+  "C:/UCI_Credit_Card.csv", 
   h = TRUE
 )
 
-credit_card[1:5, ]
+default.payment.next.month[1:5, ]
+dim(default.payment.next.month)
 
-summary(credit_card)
+summary(default.payment.next.month)
 
 cat("\014")
