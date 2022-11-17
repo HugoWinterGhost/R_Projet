@@ -30,4 +30,19 @@ df_status(default.payment.next.month)
 
 # 0 : pas de crédit ou crédit payé avec pas de retards
 
+plot(default.payment.next.month$EDUCATION)
+
+default.payment.next.month$EDUCATION[
+  default.payment.next.month$EDUCATION == 0
+] <- 4
+default.payment.next.month$MARRIAGE[
+  default.payment.next.month$MARRIAGE == 0
+] <- 3
+
+default.payment.next.month$EDUCATION
+
+default.payment.next.month$EDUCATION[
+  default.payment.next.month$MARRIAGE == 0
+]
+
 cat("\014")
