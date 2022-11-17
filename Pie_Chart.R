@@ -99,21 +99,6 @@ Good_Payor <- credit_card[which(credit_card$default.payment.next.month == 1),]
 ##############################
 
 marriage_table <- table(credit_card$MARRIAGE, credit_card$default.payment.next.month)
-marriage_table[8]
-
-
-marriage_values_list <- c(
-  marriage_table[6], marriage_table[7],
-  marriage_table[8]
-)
-marriage_labels_list <- c("Married", "Single", "Others")
-marriage_piepercent <- round(100 * marriage_values_list / sum(marriage_values_list), 1)
-marriage_labels <- paste(marriage_labels_list, marriage_piepercent, '%')
-pie(
-  marriage_values_list, marriage_labels,
-  col = rainbow(length(marriage_values_list)),
-  main = 'Pie Chart Bon Payeur'
-)
-
+marriage_table
 
 cat("\014")
