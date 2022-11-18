@@ -145,8 +145,8 @@ hist(
 )
 
 barplot(
-  table(credit_card$LIMIT_BAL, credit_card$AGE), main="Répartion des âges", xlab="Age", 
-  ylab="Nombre de personnes", col = c("lightblue", "pink"), 
+  table(credit_card$AGE), main="Répartion des âges", xlab="Age", 
+  ylab="Nombre de personnes", col = rainbow(length(payment_values_list)), 
   ylim = c(0,2000)
 )
 
@@ -227,7 +227,7 @@ BILL_MEAN_LIST
 
 backup_option <- options()
 
-# options(scipen = 999)
-options(backup_option)
+options(scipen = 1000000)
+# options(backup_option)
 plot(AGE_SORT, BILL_MEAN_LIST)
 cat("\014")
