@@ -101,4 +101,10 @@ Good_Payor <- credit_card[which(credit_card$default.payment.next.month == 1),]
 marriage_table <- table(credit_card$MARRIAGE, credit_card$default.payment.next.month)
 marriage_table
 
+library("corrplot")
+corrplot(
+  cor(credit_card), type = "upper", order = "hclust", 
+  tl.col = "black", tl.srt = 45
+)
+
 cat("\014")
